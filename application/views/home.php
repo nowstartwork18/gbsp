@@ -29,9 +29,84 @@
                         <h1 class="page-title"> Bootstrap Form Controls
                             <small>bootstrap inputs, input groups, custom checkboxes and radio controls and more</small>
                         </h1>
+                       <div class="row">
+                           <div class="col-md-3"></div>
+                             <div class="col-md-6 ">
+                                
+                                <div class="portlet light bordered" style="padding-bottom: 29px;">
+                                    <div class="portlet-title">
+                                        <div class="caption font-red-sunglo" align="center">
+                                            <!-- <i class="icon-settings font-red-sunglo"></i> -->
+                                            <span class="caption-subject bold uppercase"> Default Form</span>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="portlet-body form">
+                                        <form role="form">
+                                           <div class="form-body">
+                                             <div class="col-md-6">
+                                              <div class="form-group">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control " placeholder="Number">
+                                                </div>
+                                              </div>
+                                             </div>
+                                             <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <button type="submit" class="btn blue">Submit</button>
+                                                </div>
+                                             </div>    
+                                           </div>
+                                            <!-- <div class="form-actions" align="center">
+                                                <button type="submit" class="btn blue">Submit</button>
+                                                <button type="button" class="btn default">Cancel</button>
+                                            </div> -->
+                                        </form>
+                                    </div>
+                                </div>
+                              
+                            </div>
+                           <div class="col-md-3"></div>
+                       </div>
+
                         <div class="row">
-                            
-                           
+                          
+                             <div class="col-md-12 ">
+                                <div class="portlet box blue ">
+                                    <div class="portlet-title">
+                                        <div class="caption">
+                                            <i class="fa fa-gift"></i> Validation States </div>
+                                       <!--  <div class="tools">
+                                            <a href="" class="collapse" data-original-title="" title=""> </a>
+                                            <a href="#portlet-config" data-toggle="modal" class="config" data-original-title="" title=""> </a>
+                                            <a href="" class="reload" data-original-title="" title=""> </a>
+                                            <a href="" class="remove" data-original-title="" title=""> </a>
+                                        </div> -->
+                                    </div>
+                                    <div class="portlet-body form">
+                                        <form role="form">
+                                            <div class="form-body">
+                                               <div class="row">
+                                                   <div class="col-md-6">
+                                                       <div class="form-group">
+                                                    <label class="col-md-3 control-label">Small Input</label>
+                                                    <div class="col-md-6">
+                                                        <input type="text" class="form-control input-sm" placeholder="Default Input"> </div>
+                                                </div> 
+                                                   </div>
+                                                   <div class="col-md-6">A</div>
+                                               </div>
+                                            </div>
+                                            <div class="form-actions">
+                                                <button type="button" class="btn default">Cancel</button>
+                                                <button type="submit" class="btn red">Submit</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                              
+                            </div>
+                         
                         </div>
                        
                     </div>

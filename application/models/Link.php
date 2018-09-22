@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Link extends CI_Model {
 
     public function hit($link, $params, $type = 1, $headers = array()) {
-        $Base_API = 'http://localhost:81/gbsp/index.php/';
+        $Base_API = 'http://localhost/gbsp/index.php/';
         $query = http_build_query($params);
         $request = curl_init();
         if ($type == 0) {
