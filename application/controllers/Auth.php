@@ -18,7 +18,7 @@ class Auth extends CI_Controller
 
 		$hashed = $this->link->getHash($password);
 print_r($hashed);
-		 $this->db->insert('users',array('username'=>$username, 'password'=>$hashed));
+		// $this->db->insert('users',array('username'=>$username, 'password'=>$hashed));
 		$result = $this->db->get_where('users', array('username' => $username, 'password' => $hashed))->result_array();
 		print_r($result);
 	
@@ -73,7 +73,7 @@ print_r($hashed);
 	public function logout()
 	{
 		
-		redirect("index.php/logout");
+		redirect("logout");
 	}
 
 }

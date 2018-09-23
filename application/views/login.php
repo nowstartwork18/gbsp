@@ -109,7 +109,7 @@
         {
              var get_form_data = $('#login_form').serialize();
              $.ajax({
-                url : '<?php echo base_url('index.php/auth/login') ?>',
+                url : '<?php echo base_url('auth/login') ?>',
                 type : "POST",
                 data : get_form_data,
 
@@ -122,7 +122,7 @@
                         $('#error').html(ss.message).fadeOut(3000);
                     } else {
                         $('#success').html(ss.message).fadeOut(7000);
-                        window.location.href ='<?php echo base_url('index.php/home') ?>';
+                        window.location.href ='<?php echo base_url('home') ?>';
                     }
                 },
                 error:function(err) {
