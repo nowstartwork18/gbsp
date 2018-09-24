@@ -1,7 +1,11 @@
+
 <!DOCTYPE html>
 
 <html lang="en">
         <title>GBSP | Dashboard</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
+
 <head>
         <?php $this->load->view('hfs/html_header'); ?>
     <body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">
@@ -146,15 +150,35 @@
                                     </div>
                                 </div>
                               
-                            </div>
-                         
                         </div>
-                       
+                      
+                        <div class="row" >
+                          <table>
+                            <thead>
+                              <tr>
+                                <td>#</td>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <?php
+                                // foreach ($ad as $key => $value) {
+                                //    echo "<pre>";
+                                //    print_r($value['new_balance']);
+
+                                // }
+                               ?>
+                            </tbody>
+                          </table>
+                        </div>
+                        
+                        </div>
+                      
                     </div>
+
                 </div>
             </div>
         </div>
-        
+        <!-- <div id='auto_ref'> <?php echo "<pre>"; print_r($ad); ?> </div> -->
 
         <?php $this->load->view('hfs/footer') ?>
 
@@ -164,7 +188,7 @@
         $('#btn1').click(function(){
 
             $.ajax({
-                url : "<?php echo base_url('index.php/accounts/get_details') ?>",
+                url : "<?php echo base_url('accounts/get_details') ?>",
                 data : $('#find_info').serialize(),
                 type : "POST",
 
@@ -188,12 +212,25 @@
 
         $('#btn2').click(function(){
           $.ajax({
-            url : "<?php echo base_url('index.php/accounts/put_data') ?>",
+            url : "<?php echo base_url('accounts/put_data') ?>",
             data : $('#update_data').serialize(),
             type : "POST",
 
             success:function(resp){
-              console.log(resp);
+              var returnData = JSON.parse(resp);
+               console.log(returnData);
+               if(returnData.status==true){
+                  swal({
+                      title: "Wait!",
+                      text: "Account updating.",
+                      timer: 2000,
+                      showConfirmButton: false
+                      });
+                  $('#update_data')[0].reset();
+                }else{
+
+                }  
+                
             }
           })
         })
