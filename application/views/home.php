@@ -55,7 +55,7 @@
                                                     <button type="button" id="btn1" class="btn blue">Submit</button>
                                                 </div>
                                              </div>  
-                                             <div id="err1"></div>  
+                                             <div id="err111"></div>  
                                            </div>
                                             <!-- <div class="form-actions" align="center">
                                                 <button type="submit" class="btn blue">Submit</button>
@@ -78,7 +78,7 @@
                                             <i class="fa fa-gift"></i> User Information </div>
                                     </div>
                                     <div class="portlet-body form">
-                                      <?php echo form_open('',array('id'=>'update_date')) ?>
+                                      <?php echo form_open('',array('id'=>'update_data')) ?>
                                             <div class="form-body">
                                                <div class="row">
                                                    <div class="col-md-6">
@@ -127,7 +127,7 @@
                                                     <div class="form-group">
                                                         <label class="col-md-4 control-label">Enter Amount</label>
                                                         <div class="col-md-6">
-                                                        <input type="text" class="form-control input-sm" placeholder="Enter Deposite Amount" name="deposite_amount" id="deposite_amount"> </div>
+                                                        <input type="text" class="form-control input-sm" placeholder="Enter  Amount" name="deposite_amount" id="deposite_amount"> </div>
                                                     </div> 
                                                 </div>
                                                    <div class="col-md-6">
@@ -164,7 +164,7 @@
         $('#btn1').click(function(){
 
             $.ajax({
-                url : "<?php echo base_url('accounts/get_details') ?>",
+                url : "<?php echo base_url('index.php/accounts/get_details') ?>",
                 data : $('#find_info').serialize(),
                 type : "POST",
 
@@ -172,20 +172,30 @@
                     var returnData = JSON.parse(resp);
                     console.log(returnData);
                     if(returnData.status==true){
-                    $('#account_number').val(returnData.account_number);
-                    $('#name').val(returnData.name);
-                    $('#current_balance').val(returnData.new_balance);
-                }else{
-                    $('#err1').html(returnData.message).fadeOut(5000);
-                }
-
-
+                      $('#account_number').val(returnData.account_number);
+                      $('#name').val(returnData.name);
+                      $('#current_balance').val(returnData.new_balance);
+                      $('#err111').html('');
+                    }else{
+                        $('#err111').html(returnData.message);
+                    }
+                },
+                error:function(err){
+                  console.log(err);
                 }
             })
         });
 
         $('#btn2').click(function(){
+          $.ajax({
+            url : "<?php echo base_url('index.php/accounts/put_data') ?>",
+            data : $('#update_data').serialize(),
+            type : "POST",
 
+            success:function(resp){
+              console.log(resp);
+            }
+          })
         })
     })
 </script>
